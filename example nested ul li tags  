@@ -1,0 +1,14 @@
+from bs4 import BeautifulSoup as bs
+import requests as r
+
+
+URL='https://realpython.com/beautiful-soup-web-scraper-python/'
+response=r.get(URL)
+soup = bs(response.text,'html.parser')
+main_body=soup.find('div',attrs={'class':'toc'})
+main_body1=main_body.find('ul')
+print(main_body1.text)
+
+
+
+
